@@ -1,0 +1,76 @@
+# defining the addition function
+def addition(a,b):
+    c =a+b
+    return c
+
+# defining the addition function
+def subtraction(a,b):
+    c = a-b
+    return c
+
+# defining the division function
+def division(a, b):
+    if b == 0:
+        return "error: cannot perform division by zero"
+    else:
+        c = a / b
+        return c
+
+# defining the multiplication function
+def multiplication(a,b):
+    c = a*b
+    return c 
+
+# defining the modulus function
+def modulus(a,b):
+    c = a%b
+    return c
+
+# defining the power function
+def power(a,b):
+    c = a**b
+    return c
+
+# defining main function
+def main():
+    # inputs
+    f ="yes"
+    history=[]
+    while f =="yes":
+        a = float(input("enter the first number : "))
+        Operator = str(input(" * ,+ ,- ,/ ,% , ^ :"))
+        b = float(input(" enter the second number :  "))
+        user_input = str(a)+" "+ Operator + " " + str(b)
+        print(user_input)
+        if Operator=="+":
+            result = addition(a,b)
+            print("result is ", result)
+        elif Operator == "-" :
+            result = subtraction(a,b)
+            print("result is ", result)
+        elif Operator =="/":
+            result = division(a,b)
+            print("result is ", result)
+        elif Operator == "*":
+            result = multiplication(a,b)
+            print("result is ", result)
+        elif Operator == "%":
+            result = modulus(a,b)
+            print("result is ", result)
+        elif Operator == "^":
+            result = power(a,b)
+            print("result is ", result)
+        else:
+            print("invalid operation")
+        history.append(f"{user_input} = {result}")
+        
+        #printing history
+        history_output = str(input(" do you want to see the history, yes/no: "))
+        if  history_output=="yes":
+            print(history)
+            f=str(input(" do you want to continue?, yes/no: "))
+        else:
+            f=str(input(" do you want to continue?, yes/no: "))
+        
+    print("Thank you for using our calculator")
+main()    
